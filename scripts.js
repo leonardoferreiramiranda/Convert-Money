@@ -3,6 +3,7 @@ const select = document.getElementById("currency-select")
 
 const dolar = 5.44
 const euro = 5.51
+const bitCoin = 124815.76
 
 const buttonValue = () => {
     const inputReais = document.getElementById("input-real").value
@@ -29,6 +30,9 @@ const buttonValue = () => {
         currency: "EUR"
     }).format(inputReais / euro);
     }
+    if(select.value === "Bitcoin") {
+        dolarTest.innerHTML = (inputReais / bitCoin)
+    }
 }
 
 changeSelecto = () => {
@@ -42,7 +46,11 @@ changeSelecto = () => {
         currencyName.innerHTML = "Euro"
         currencyImg.src = "./assets/Euro.png"
     }
-
+    
+    if(select.value === "Bitcoin") {
+        currencyName.innerHTML = "Bitcoin"
+        currencyImg.src = "./assets/CriptBitcoin.png"
+    }
     buttonValue()
 }
 
